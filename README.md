@@ -55,6 +55,92 @@
             padding: 0 20px;
         }
 
+        /* ===== COOKIE BANNER ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            color: var(--white);
+            padding: 25px;
+            z-index: 9999;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .cookie-banner.active {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cookie-text {
+            flex: 1;
+        }
+
+        .cookie-text h3 {
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .cookie-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .cookie-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .cookie-text a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95em;
+        }
+
+        .cookie-accept {
+            background: var(--accent);
+            color: white;
+        }
+
+        .cookie-accept:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .cookie-settings {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-settings:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
         /* ===== PREMIUM HEADER ===== */
         header {
             background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
@@ -1038,6 +1124,94 @@
             border: 1px solid rgba(0, 184, 148, 0.2);
         }
 
+        /* ===== RECHTLICHE SEITEN STYLES ===== */
+        .legal-page {
+            padding: 140px 0 80px;
+            background: var(--light);
+            min-height: 100vh;
+        }
+
+        .legal-container {
+            background: var(--white);
+            padding: 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .legal-header h1 {
+            font-size: 2.5em;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .legal-header .date {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .legal-content {
+            line-height: 1.8;
+        }
+
+        .legal-content h2 {
+            color: var(--dark);
+            margin: 30px 0 15px;
+            font-size: 1.5em;
+        }
+
+        .legal-content h3 {
+            color: var(--text);
+            margin: 25px 0 10px;
+            font-size: 1.2em;
+        }
+
+        .legal-content p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .legal-content ul, .legal-content ol {
+            margin: 15px 0 15px 30px;
+            color: var(--text);
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-to-home:hover {
+            color: var(--accent);
+            gap: 12px;
+        }
+
         /* ===== PREMIUM FOOTER ===== */
         footer {
             background: var(--darker);
@@ -1123,6 +1297,15 @@
             
             .gallery-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-container {
+                padding: 40px 30px;
             }
         }
 
@@ -1238,6 +1421,27 @@
                 width: 100%;
                 height: 50%;
             }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
+            
+            .legal-page {
+                padding: 120px 0 60px;
+            }
+            
+            .legal-container {
+                padding: 30px 20px;
+            }
+            
+            .legal-header h1 {
+                font-size: 2em;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1269,6 +1473,22 @@
     </style>
 </head>
 <body>
+    <!-- ===== COOKIE BANNER ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h3>🍪 Cookies & Datenschutz</h3>
+                    <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. Einige Cookies sind notwendig für den Betrieb der Seite, andere helfen uns, Ihre Erfahrung zu verbessern. Weitere Informationen finden Sie in unserer <a href="#datenschutz">Datenschutzerklärung</a>.</p>
+                </div>
+                <div class="cookie-buttons">
+                    <button class="cookie-btn cookie-accept" id="acceptCookies">Alle akzeptieren</button>
+                    <button class="cookie-btn cookie-settings" id="cookieSettings">Einstellungen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== ULTRA PREMIUM HEADER ===== -->
     <header id="main-header">
         <div class="container header-container">
@@ -1754,10 +1974,10 @@
                 <div class="footer-section">
                     <h3 class="footer-heading">Rechtliches</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Impressum</a></li>
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">AGB</a></li>
-                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutz</a></li>
+                        <li><a href="#agb">AGB</a></li>
+                        <li><a href="#cookies">Cookies</a></li>
                     </ul>
                 </div>
             </div>
@@ -1768,9 +1988,240 @@
         </div>
     </footer>
 
+    <!-- ===== RECHTLICHE SEITEN ===== -->
+    <!-- Diese sind zunächst versteckt und werden über die Footer-Links aufgerufen -->
+    
+    <!-- Impressum -->
+    <section id="impressum" class="legal-page" style="display: none;">
+        <div class="container">
+            <div class="legal-container">
+                <div class="legal-header">
+                    <h1>Impressum</h1>
+                    <div class="date">Stand: Januar 2025</div>
+                </div>
+                
+                <div class="legal-content">
+                    <h2>Angaben gemäß § 5 TMG</h2>
+                    <p><strong>KristallRein Kassel</strong><br>
+                    Musterstraße 123<br>
+                    34117 Kassel<br>
+                    Deutschland</p>
+                    
+                    <h2>Kontakt</h2>
+                    <p>Telefon: +49 1515 1816181<br>
+                    E-Mail: info@krystalrein-kassel.de<br>
+                    Website: www.kristallrein-kassel.de</p>
+                    
+                    <h2>Vertreten durch</h2>
+                    <p>Max Mustermann (Geschäftsführer)</p>
+                    
+                    <h2>Umsatzsteuer-ID</h2>
+                    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                    DE 123 456 789</p>
+                    
+                    <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+                    <p>Berufsbezeichnung: Gebäudereiniger<br>
+                    Zuständige Kammer: Handwerkskammer Kassel<br>
+                    Verliehen in: Deutschland</p>
+                    
+                    <h2>EU-Streitschlichtung</h2>
+                    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+                    
+                    <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+                    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    
+                    <h2>Haftung für Inhalte</h2>
+                    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                    
+                    <a href="#home" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datenschutz -->
+    <section id="datenschutz" class="legal-page" style="display: none;">
+        <div class="container">
+            <div class="legal-container">
+                <div class="legal-header">
+                    <h1>Datenschutzerklärung</h1>
+                    <div class="date">Stand: Januar 2025</div>
+                </div>
+                
+                <div class="legal-content">
+                    <h2>1. Datenschutz auf einen Blick</h2>
+                    <h3>Allgemeine Hinweise</h3>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                    
+                    <h3>Datenerfassung auf dieser Website</h3>
+                    <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>
+                    Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.</p>
+                    
+                    <h2>2. Hosting</h2>
+                    <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+                    <h3>Externes Hosting</h3>
+                    <p>Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert.</p>
+                    
+                    <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+                    <h3>Datenschutz</h3>
+                    <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                    
+                    <h2>4. Datenerfassung auf dieser Website</h2>
+                    <h3>Cookies</h3>
+                    <p>Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.</p>
+                    
+                    <h3>Kontaktformular</h3>
+                    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+                    
+                    <h2>5. Ihre Rechte</h2>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.</p>
+                    
+                    <a href="#home" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGB -->
+    <section id="agb" class="legal-page" style="display: none;">
+        <div class="container">
+            <div class="legal-container">
+                <div class="legal-header">
+                    <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+                    <div class="date">Stand: Januar 2025</div>
+                </div>
+                
+                <div class="legal-content">
+                    <h2>§ 1 Geltungsbereich</h2>
+                    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen KristallRein Kassel (im Folgenden "Unternehmen") und seinen Kunden (im Folgenden "Kunde") über die Erbringung von Gebäudereinigungsdienstleistungen.</p>
+                    
+                    <h2>§ 2 Angebot und Vertragsschluss</h2>
+                    <p>1. Angebote des Unternehmens sind freibleibend und unverbindlich.<br>
+                    2. Der Vertrag kommt durch schriftliche Auftragsbestätigung des Unternehmens oder durch Ausführung der Leistung zustande.</p>
+                    
+                    <h2>§ 3 Leistungsumfang</h2>
+                    <p>1. Der genaue Leistungsumfang ergibt sich aus der schriftlichen Vereinbarung.<br>
+                    2. Das Unternehmen erbringt seine Leistungen mit der gebotenen Sorgfalt nach den Regeln der Gebäudereinigerbranche.</p>
+                    
+                    <h2>§ 4 Preise und Zahlungsbedingungen</h2>
+                    <p>1. Alle Preise verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer.<br>
+                    2. Rechnungen sind innerhalb von 14 Tagen nach Rechnungsdatum ohne Abzug zahlbar.</p>
+                    
+                    <h2>§ 5 Haftung</h2>
+                    <p>1. Das Unternehmen haftet für Vorsatz und grobe Fahrlässigkeit.<br>
+                    2. Bei leichter Fahrlässigkeit haftet das Unternehmen nur bei Verletzung wesentlicher Vertragspflichten.</p>
+                    
+                    <h2>§ 6 Kündigung</h2>
+                    <p>1. Der Vertrag kann von beiden Seiten mit einer Frist von 4 Wochen zum Monatsende gekündigt werden.<br>
+                    2. Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt.</p>
+                    
+                    <h2>§ 7 Schlussbestimmungen</h2>
+                    <p>1. Es gilt das Recht der Bundesrepublik Deutschland.<br>
+                    2. Gerichtsstand ist Kassel.</p>
+                    
+                    <a href="#home" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookies -->
+    <section id="cookies" class="legal-page" style="display: none;">
+        <div class="container">
+            <div class="legal-container">
+                <div class="legal-header">
+                    <h1>Cookie-Richtlinie</h1>
+                    <div class="date">Stand: Januar 2025</div>
+                </div>
+                
+                <div class="legal-content">
+                    <h2>Was sind Cookies?</h2>
+                    <p>Cookies sind kleine Textdateien, die auf Ihrem Gerät (Computer, Smartphone, Tablet) gespeichert werden, wenn Sie unsere Website besuchen. Sie enthalten Informationen über Ihr Surfverhalten und dienen dazu, Ihren Besuch auf unserer Website komfortabler zu gestalten.</p>
+                    
+                    <h2>Welche Cookies verwenden wir?</h2>
+                    <h3>Notwendige Cookies</h3>
+                    <p>Diese Cookies sind für den Betrieb der Website unerlässlich und können nicht deaktiviert werden. Sie werden in der Regel als Reaktion auf von Ihnen getätigte Aktionen gesetzt, wie z.B. das Festlegen Ihrer Datenschutzeinstellungen.</p>
+                    
+                    <h3>Funktionale Cookies</h3>
+                    <p>Diese Cookies ermöglichen es der Website, erweiterte Funktionen und Personalisierung bereitzustellen. Sie können von uns oder von Drittanbietern, deren Dienste wir auf unseren Seiten verwenden, gesetzt werden.</p>
+                    
+                    <h3>Analytische Cookies</h3>
+                    <p>Diese Cookies helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden.</p>
+                    
+                    <h2>Cookie-Verwaltung</h2>
+                    <p>Die meisten Browser akzeptieren Cookies automatisch. Sie können Ihren Browser so einstellen, dass Cookies abgelehnt oder Sie benachrichtigt werden, wenn ein Cookie gesetzt wird. Bitte beachten Sie, dass das Deaktivieren von Cookies die Funktionalität dieser Website einschränken kann.</p>
+                    
+                    <h2>Detaillierte Cookie-Liste</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <tr style="background: var(--secondary);">
+                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Cookie-Name</th>
+                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Zweck</th>
+                            <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Ablauf</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">cookie_consent</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Speichert Ihre Cookie-Einstellungen</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">1 Jahr</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">session_id</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Erkennt Sie während Ihres Besuchs</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Session</td>
+                        </tr>
+                    </table>
+                    
+                    <h2>Ihre Rechte</h2>
+                    <p>Sie haben das Recht, jederzeit der Verwendung von Cookies zu widersprechen, die nicht für den Betrieb der Website notwendig sind. Bitte nutzen Sie dazu die Cookie-Einstellungen in Ihrem Browser oder unser Cookie-Banner.</p>
+                    
+                    <a href="#home" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Zurück zur Startseite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Premium JavaScript für ultra-smooth Interaktionen
         document.addEventListener('DOMContentLoaded', function() {
+            // Cookie Banner Funktionen
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptCookiesBtn = document.getElementById('acceptCookies');
+            const cookieSettingsBtn = document.getElementById('cookieSettings');
+            
+            // Prüfen ob Cookie-Einstellungen bereits gespeichert sind
+            const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+            
+            if (!cookiesAccepted) {
+                // Zeige Cookie-Banner nach 1 Sekunde
+                setTimeout(() => {
+                    cookieBanner.classList.add('active');
+                }, 1000);
+            }
+            
+            // Cookie akzeptieren
+            acceptCookiesBtn.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                localStorage.setItem('cookiesDate', new Date().toISOString());
+                cookieBanner.classList.remove('active');
+                showNotification('Cookies erfolgreich akzeptiert!');
+            });
+            
+            // Cookie-Einstellungen
+            cookieSettingsBtn.addEventListener('click', function() {
+                // Hier könnte man ein erweitertes Cookie-Einstellungsfenster öffnen
+                // Für jetzt einfach zur Cookie-Seite navigieren
+                showLegalPage('cookies');
+            });
+            
             // Header Scroll Effect
             const header = document.getElementById('main-header');
             window.addEventListener('scroll', function() {
@@ -1798,10 +2249,22 @@
             });
 
             // Smooth Scroll für Navigation
-            document.querySelectorAll('nav a').forEach(anchor => {
+            document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
+                    
+                    // Prüfen ob es sich um eine rechtliche Seite handelt
+                    if (targetId.startsWith('#')) {
+                        const pageId = targetId.substring(1);
+                        const legalPages = ['impressum', 'datenschutz', 'agb', 'cookies'];
+                        
+                        if (legalPages.includes(pageId)) {
+                            showLegalPage(pageId);
+                            return;
+                        }
+                    }
+                    
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
@@ -1822,8 +2285,66 @@
                 });
             });
 
+            // Funktion zum Anzeigen rechtlicher Seiten
+            function showLegalPage(pageId) {
+                // Alle rechtlichen Seiten verstecken
+                document.querySelectorAll('.legal-page').forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // Hauptinhalt verstecken
+                document.querySelectorAll('section:not(.legal-page)').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Footer verstecken
+                document.querySelector('footer').style.display = 'none';
+                
+                // Gewünschte Seite anzeigen
+                const legalPage = document.getElementById(pageId);
+                if (legalPage) {
+                    legalPage.style.display = 'block';
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Mobile Menu schließen
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                }
+            }
+            
+            // Zurück zur Startseite Funktion
+            document.querySelectorAll('.back-to-home').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Alle rechtlichen Seiten verstecken
+                    document.querySelectorAll('.legal-page').forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Hauptinhalt anzeigen
+                    document.querySelectorAll('section:not(.legal-page)').forEach(section => {
+                        section.style.display = 'block';
+                    });
+                    
+                    // Footer anzeigen
+                    document.querySelector('footer').style.display = 'block';
+                    
+                    // Zur Startseite scrollen
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
             // Aktive Navigation basierend auf Scroll-Position
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section:not(.legal-page)');
             const navLinks = document.querySelectorAll('nav a');
 
             function updateActiveNav() {
@@ -1883,12 +2404,62 @@
                     const name = document.getElementById('name').value;
                     const email = document.getElementById('email').value;
                     
-                    alert(`Vielen Dank ${name}! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden unter ${email}.`);
+                    // Erfolgsmeldung anzeigen
+                    showNotification(`Vielen Dank ${name}! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden unter ${email}.`);
                     
                     // Formular zurücksetzen
                     offerForm.reset();
                 });
             }
+            
+            // Benachrichtigung anzeigen
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 8px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    animation: slideIn 0.3s ease;
+                `;
+                
+                notification.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Nach 5 Sekunden entfernen
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+            
+            // CSS für Animationen hinzufügen
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
 </body>
