@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blitzblank Kassel | Premium Gebäudereinigung & Unterhaltsreinigung</title>
+    <title>KristallRein Kassel | Premium Gebäudereinigung & Unterhaltsreinigung</title>
     <meta name="description" content="Professionelle Gebäudereinigung in Kassel - Praxisreinigung, Büroreinigung, Bauendreinigung, Fensterreinigung. Jetzt kostenloses Angebot anfordern!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0056b3;
-            --primary-dark: #004494;
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
             --secondary: #e6f2ff;
-            --accent: #ff7b00;
-            --accent-dark: #e66d00;
+            --accent: #00b894;
+            --accent-dark: #00a085;
             --dark: #1a365d;
             --darker: #0f2342;
             --light: #f8f9fa;
@@ -89,17 +89,38 @@
         }
 
         .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 1.2em;
-            box-shadow: 0 4px 12px rgba(255, 123, 0, 0.3);
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            top: 5px;
+            left: 10px;
+        }
+
+        .logo-icon::after {
+            content: '✨';
+            position: absolute;
+            font-size: 0.8em;
+            bottom: 5px;
+            right: 8px;
         }
 
         .logo-text {
@@ -174,38 +195,6 @@
             gap: 20px;
         }
 
-        .phone-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: var(--transition);
-        }
-
-        .phone-link:hover {
-            color: var(--accent);
-            transform: translateY(-1px);
-        }
-
-        .phone-icon {
-            background: var(--accent);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .phone-link:hover .phone-icon {
-            background: var(--accent-dark);
-            transform: scale(1.1);
-        }
-
         /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
@@ -220,8 +209,8 @@
         /* ===== ULTRA PREMIUM HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, 
-                rgba(0, 84, 179, 0.92) 0%, 
-                rgba(0, 40, 85, 0.95) 100%),
+                rgba(0, 102, 204, 0.92) 0%, 
+                rgba(0, 66, 138, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             min-height: 100vh;
             display: flex;
@@ -263,7 +252,7 @@
             font-weight: 600;
             font-size: 0.9em;
             margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(255, 123, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
             animation: pulse 2s infinite;
         }
 
@@ -331,7 +320,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 6px 20px rgba(255, 123, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -349,7 +338,7 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 123, 0, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 184, 148, 0.6);
         }
 
         .btn:hover::before {
@@ -404,7 +393,7 @@
             font-weight: 600;
             font-size: 0.9em;
             margin-bottom: 20px;
-            border: 1px solid rgba(0, 86, 179, 0.1);
+            border: 1px solid rgba(0, 102, 204, 0.1);
         }
 
         .section-title {
@@ -575,36 +564,6 @@
             font-weight: 600;
         }
 
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .about-stat {
-            text-align: center;
-            padding: 25px;
-            background: var(--light);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .about-stat-number {
-            display: block;
-            font-size: 2.5em;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .about-stat-label {
-            font-size: 0.9em;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
         .about-text h2 {
             font-size: 2.8em;
             font-weight: 800;
@@ -676,71 +635,206 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 30px;
             margin-top: 50px;
         }
 
-        .gallery-item {
+        .gallery-comparison {
             position: relative;
-            height: 280px;
+            height: 400px;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             cursor: pointer;
+            display: flex;
         }
 
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, transparent 100%);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1;
-        }
-
-        .gallery-item::after {
-            content: '🔍 Vergrößern';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            color: white;
-            font-weight: 600;
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 2;
-        }
-
-        .gallery-item:hover {
+        .gallery-comparison:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
-        .gallery-item:hover::before {
-            opacity: 0.8;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .gallery-placeholder {
-            width: 100%;
+        .gallery-before, .gallery-after {
+            width: 50%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-before {
+            background: linear-gradient(135deg, #666 0%, #333 100%);
+        }
+
+        .gallery-after {
             background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        }
+
+        .gallery-badge {
+            position: absolute;
+            top: 20px;
+            padding: 8px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8em;
+            z-index: 2;
+        }
+
+        .gallery-before .gallery-badge {
+            left: 20px;
+            background: rgba(102, 102, 102, 0.9);
+        }
+
+        .gallery-after .gallery-badge {
+            right: 20px;
+            background: rgba(0, 102, 204, 0.9);
+        }
+
+        .gallery-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .gallery-label {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        /* ===== SOCIAL MEDIA SECTION ===== */
+        .social-media {
+            padding: 100px 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .social-header {
+            margin-bottom: 60px;
+        }
+
+        .social-title {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .social-subtitle {
+            font-size: 1.2em;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .platform-card {
+            background: var(--light);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
+            margin: 0 auto 25px;
+            font-size: 2em;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .instagram .platform-icon {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .facebook .platform-icon {
+            background: #3b5998;
+        }
+
+        .whatsapp .platform-icon {
+            background: #25D366;
+        }
+
+        .tiktok .platform-icon {
+            background: #000000;
+        }
+
+        .platform-card:hover .platform-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .platform-card h3 {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .platform-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .social-exclusive {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-exclusive::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .social-exclusive-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-exclusive h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .social-exclusive p {
             font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* ===== PREMIUM CONTACT SECTION ===== */
@@ -837,39 +931,111 @@
             color: var(--white);
         }
 
-        .cta-box {
+        /* ===== FORMULAR STYLES ===== */
+        .form-container {
             background: rgba(255, 255, 255, 0.05);
             padding: 40px;
             border-radius: var(--border-radius);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            text-align: center;
         }
 
-        .cta-box h3 {
-            font-size: 1.6em;
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            font-size: 1.8em;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--white);
         }
 
-        .cta-box p {
+        .form-header p {
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 25px;
             line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .form-label span {
+            color: var(--accent);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 1em;
+            transition: var(--transition);
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .form-checkbox input {
+            margin-top: 5px;
+        }
+
+        .form-checkbox label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            justify-content: center;
         }
 
         .guarantee-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 123, 0, 0.1);
+            background: rgba(0, 184, 148, 0.1);
             color: var(--accent);
             padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             margin-top: 20px;
-            border: 1px solid rgba(255, 123, 0, 0.2);
+            border: 1px solid rgba(0, 184, 148, 0.2);
         }
 
         /* ===== PREMIUM FOOTER ===== */
@@ -949,6 +1115,14 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
+            }
+            
+            .social-platforms {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1042,6 +1216,28 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            .social-platforms {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-title {
+                font-size: 2em;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-comparison {
+                height: 300px;
+                flex-direction: column;
+            }
+            
+            .gallery-before, .gallery-after {
+                width: 100%;
+                height: 50%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1061,6 +1257,14 @@
                 padding: 15px 30px;
                 font-size: 1em;
             }
+            
+            .social-exclusive {
+                padding: 30px 20px;
+            }
+            
+            .form-container {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
@@ -1069,9 +1273,9 @@
     <header id="main-header">
         <div class="container header-container">
             <a href="#home" class="logo">
-                <div class="logo-icon">BB</div>
+                <div class="logo-icon">KR</div>
                 <div>
-                    <div class="logo-text">Blitz<span>blank</span> Kassel</div>
+                    <div class="logo-text">Kristall<span>Rein</span> Kassel</div>
                     <div class="logo-tagline">PREMIUM GEBÄUDEREINIGUNG</div>
                 </div>
             </a>
@@ -1082,18 +1286,10 @@
                     <li><a href="#services">Leistungen</a></li>
                     <li><a href="#about">Über Uns</a></li>
                     <li><a href="#gallery">Referenzen</a></li>
+                    <li><a href="#social">Social Media</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </nav>
-
-            <div class="header-cta">
-                <a href="tel:+4915151816181" class="phone-link">
-                    <div class="phone-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    +49 1515 1816181
-                </a>
-            </div>
 
             <button class="mobile-menu-btn" id="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -1109,7 +1305,7 @@
                     <i class="fas fa-star"></i> Nr. 1 in Kassel
                 </div>
                 
-                <h1>Mehr als nur sauber.<br>Ein perfekter erster Eindruck.</h1>
+                <h1>Kristall-klare Sauberkeit.<br>Ein perfekter erster Eindruck.</h1>
                 
                 <p>Wir machen Ihre Praxis, Ihr Büro oder Ihre Baustelle nicht nur rein, sondern strahlend sauber. Denn Sauberkeit ist das Fundament für Vertrauen und Erfolg.</p>
 
@@ -1147,7 +1343,7 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Unsere Premium-Leistungen</div>
-                <h2 class="section-title">Ihr Spezialist für perfekte Sauberkeit</h2>
+                <h2 class="section-title">Ihr Spezialist für kristall-klare Sauberkeit</h2>
                 <p class="section-subtitle">Maßgeschneiderte Reinigungslösungen für anspruchsvolle Gewerbekunden in Kassel und Umgebung</p>
             </div>
 
@@ -1166,7 +1362,7 @@
                         <li><i class="fas fa-check"></i> Flexible Reinigungszeiten</li>
                     </ul>
                     
-                    <div class="service-price">Ab 0,90 €/m² pro Reinigung</div>
+                    <div class="service-price">Ab 4€/m² pro Reinigung</div>
                     <a href="#contact" class="service-cta">
                         Angebot anfordern
                         <i class="fas fa-arrow-right"></i>
@@ -1182,8 +1378,6 @@
                     
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Tägliche Grundreinigung</li>
-                        <li><i class="fas fa-check"></i> Teppich- und Bodenpflege</li>
-                        <li><i class="fas fa-check"></i> Küchen- und Sanitärreinigung</li>
                         <li><i class="fas fa-check"></i> Müllentsorgung</li>
                     </ul>
                     
@@ -1208,7 +1402,7 @@
                         <li><i class="fas fa-check"></i> Endkontrolle & Übergabe</li>
                     </ul>
                     
-                    <div class="service-price">Ab 3,50 €/m² (pauschal)</div>
+                    <div class="service-price">Individuelle Angebote</div>
                     <a href="#contact" class="service-cta">
                         Angebot anfordern
                         <i class="fas fa-arrow-right"></i>
@@ -1224,7 +1418,6 @@
                     
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Innen- und Außenreinigung</li>
-                        <li><i class="fas fa-check"></i> Hochhausreinigung</li>
                         <li><i class="fas fa-check"></i> Wintergartenreinigung</li>
                         <li><i class="fas fa-check"></i> Streifenfreie Trocknung</li>
                     </ul>
@@ -1245,33 +1438,13 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="about-image-main"></div>
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <span class="about-stat-number">4</span>
-                            <span class="about-stat-label">Erfahrene Profis</span>
-                        </div>
-                        <div class="about-stat">
-                            <span class="about-stat-number">2</span>
-                            <span class="about-stat-label">Eingespielte Teams</span>
-                        </div>
-                        <div class="about-stat">
-                            <span class="about-stat-number">24/7</span>
-                            <span class="about-stat-label">Erreichbarkeit</span>
-                        </div>
-                        <div class="about-stat">
-                            <span class="about-stat-number">100%</span>
-                            <span class="about-stat-label">Kundenzufriedenheit</span>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="about-text">
-                    <div class="section-badge">Warum Blitzblank Kassel?</div>
+                    <div class="section-badge">Warum KristallRein Kassel?</div>
                     <h2>Ihr Partner für makellose Sauberkeit</h2>
                     
-                    <p>Wir sind <strong>Blitzblank Kassel</strong> – ein eingespieltes Team von vier leidenschaftlichen Reinigungsexperten. Während andere hetzen, nehmen wir uns die Zeit, die es braucht, um jedes Detail perfekt zu machen.</p>
-                    
-                    <p>Unsere Stärke ist die Zuverlässigkeit. Als Team von zwei eingespielten Zweier-Teams sind wir flexibel und können Ihnen auch bei kurzfristigen oder großen Projekten garantieren, dass die Arbeit termingerecht und in höchster Qualität erledigt wird.</p>
+                    <p>Wir sind <strong>KristallRein Kassel</strong> – ein eingespieltes Team von vier leidenschaftlichen Reinigungsexperten. Während andere hetzen, nehmen wir uns die Zeit, die es braucht, um jedes Detail perfekt zu machen.</p>
 
                     <ul class="usp-list">
                         <li>
@@ -1331,29 +1504,112 @@
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-clinic-medical"></i>
-                        Praxis-Reinigung
+                <div class="gallery-comparison">
+                    <div class="gallery-before">
+                        <div class="gallery-badge">VORHER</div>
+                        <div class="gallery-icon"><i class="fas fa-clinic-medical"></i></div>
+                        <div class="gallery-label">Praxis-Reinigung</div>
+                    </div>
+                    <div class="gallery-after">
+                        <div class="gallery-badge">NACHHER</div>
+                        <div class="gallery-icon"><i class="fas fa-clinic-medical"></i></div>
+                        <div class="gallery-label">Praxis-Reinigung</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-building"></i>
-                        Büro-Reinigung
+                
+                <div class="gallery-comparison">
+                    <div class="gallery-before">
+                        <div class="gallery-badge">VORHER</div>
+                        <div class="gallery-icon"><i class="fas fa-building"></i></div>
+                        <div class="gallery-label">Büro-Reinigung</div>
+                    </div>
+                    <div class="gallery-after">
+                        <div class="gallery-badge">NACHHER</div>
+                        <div class="gallery-icon"><i class="fas fa-building"></i></div>
+                        <div class="gallery-label">Büro-Reinigung</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-tools"></i>
-                        Bauendreinigung
+
+                <div class="gallery-comparison">
+                    <div class="gallery-before">
+                        <div class="gallery-badge">VORHER</div>
+                        <div class="gallery-icon"><i class="fas fa-tools"></i></div>
+                        <div class="gallery-label">Bauendreinigung</div>
+                    </div>
+                    <div class="gallery-after">
+                        <div class="gallery-badge">NACHHER</div>
+                        <div class="gallery-icon"><i class="fas fa-tools"></i></div>
+                        <div class="gallery-label">Bauendreinigung</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-window-restore"></i>
-                        Fensterreinigung
+
+                <div class="gallery-comparison">
+                    <div class="gallery-before">
+                        <div class="gallery-badge">VORHER</div>
+                        <div class="gallery-icon"><i class="fas fa-window-restore"></i></div>
+                        <div class="gallery-label">Fensterreinigung</div>
                     </div>
+                    <div class="gallery-after">
+                        <div class="gallery-badge">NACHHER</div>
+                        <div class="gallery-icon"><i class="fas fa-window-restore"></i></div>
+                        <div class="gallery-label">Fensterreinigung</div>
+                    </div>
+                </div>
+
+                <div class="gallery-comparison">
+                    <div class="gallery-before">
+                        <div class="gallery-badge">VORHER</div>
+                        <div class="gallery-icon"><i class="fas fa-building"></i></div>
+                        <div class="gallery-label">Fassadenreinigung</div>
+                    </div>
+                    <div class="gallery-after">
+                        <div class="gallery-badge">NACHHER</div>
+                        <div class="gallery-icon"><i class="fas fa-building"></i></div>
+                        <div class="gallery-label">Fassadenreinigung</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOCIAL MEDIA SECTION ===== -->
+    <section id="social" class="social-media">
+        <div class="container">
+            <div class="social-header">
+                <h2 class="social-title">Folge uns auf Social Media</h2>
+                <p class="social-subtitle">Bleibe auf dem Laufenden mit unseren neuesten Projekten, Reinigungstipps und Special Offers!</p>
+            </div>
+
+            <div class="social-platforms">
+                <div class="platform-card instagram">
+                    <div class="platform-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Before/After<br>Bilder & Stories</p>
+                </div>
+
+                <div class="platform-card facebook">
+                    <div class="platform-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Bewertungen & Updates</p>
+                </div>
+
+                <div class="platform-card tiktok">
+                    <div class="platform-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok</h3>
+                    <p>Reinigungs-Videos & Trends</p>
+                </div>
+            </div>
+
+            <div class="social-exclusive">
+                <div class="social-exclusive-content">
+                    <h3>Exklusiv für Follower</h3>
+                    <p>Special-Angebote die es nur auf Social Media gibt!</p>
                 </div>
             </div>
         </div>
@@ -1364,7 +1620,7 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Kontakt aufnehmen</div>
-                <h2 class="section-title">Startbereit für makellose Sauberkeit?</h2>
+                <h2 class="section-title">Startbereit für kristall-klare Sauberkeit?</h2>
                 <p class="section-subtitle">Kontaktieren Sie uns noch heute für ein unverbindliches und transparentes Angebot.</p>
             </div>
 
@@ -1372,23 +1628,12 @@
                 <div class="contact-info">
                     <div class="contact-method">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Telefonisch erreichen</h3>
-                            <p>Mo-Fr: 8-18 Uhr | Sa: Nach Vereinbarung</p>
-                            <a href="tel:+4915151816181" class="contact-link">+49 1515 1816181</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Per E-Mail</h3>
-                            <p>Antwort innerhalb von 2 Stunden</p>
-                            <a href="mailto:info@blitzblank-kassel.de" class="contact-link">info@blitzblank-kassel.de</a>
+                            <p>Antwort in kürzester Zeit</p>
+                            <a href="mailto:info@krystalrein-kassel.de" class="contact-link">info@krystalrein-kassel.de</a>
                         </div>
                     </div>
 
@@ -1399,7 +1644,6 @@
                         <div class="contact-details">
                             <h3>Einsatzgebiet</h3>
                             <p>Kassel & Umgebung</p>
-                            <p>Bundesweit für Großprojekte</p>
                         </div>
                     </div>
 
@@ -1409,20 +1653,63 @@
                         </div>
                         <div class="contact-details">
                             <h3>Notfallservice</h3>
-                            <p>24/7 für akute Notfälle</p>
-                            <p>Wasserschäden, Einbrüche, etc.</p>
+                            <p>Weil wir unsere Kunden schätzen</p>
+                            <p>auch nachmittags und abends nach Absprache</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="cta-box">
-                    <h3>Angebot in 24 Stunden</h3>
-                    <p>Senden Sie uns eine kurze Beschreibung Ihrer Räumlichkeiten und wir lassen Ihnen innerhalb von 24 Stunden ein detailliertes, unverbindliches Angebot zukommen.</p>
+                <div class="form-container">
+                    <div class="form-header">
+                        <h3>Kostenloses Angebot anfordern</h3>
+                        <p>Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden.</p>
+                    </div>
                     
-                    <a href="mailto:info@blitzblank-kassel.de" class="btn">
-                        <i class="fas fa-paper-plane"></i>
-                        E-Mail senden
-                    </a>
+                    <form id="offer-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Ihr Name <span>*</span></label>
+                            <input type="text" id="name" class="form-input" placeholder="Max Mustermann" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Ihre E-Mail <span>*</span></label>
+                            <input type="email" id="email" class="form-input" placeholder="max@beispiel.de" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Telefon (optional)</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+49 1515 1816181">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="service">Dienstleistung <span>*</span></label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Bitte wählen</option>
+                                <option value="praxis">Praxen- & Arztreinigung</option>
+                                <option value="office">Büroreinigung</option>
+                                <option value="construction">Bauendreinigung</option>
+                                <option value="windows">Fensterreinigung</option>
+                                <option value="other">Andere Dienstleistung</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="description">Projektbeschreibung <span>*</span></label>
+                            <textarea id="description" class="form-textarea" placeholder="Fläche in m², Besonderheiten, gewünschter Zeitpunkt..." required></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">100% vertraulich & unverbindlich. *Pflichtfelder</label>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Kostenloses Angebot anfordern
+                            </button>
+                        </div>
+                    </form>
 
                     <div class="guarantee-badge">
                         <i class="fas fa-lock"></i>
@@ -1438,7 +1725,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="logo-text">Blitz<span>blank</span> Kassel</div>
+                    <div class="logo-text">Kristall<span>Rein</span> Kassel</div>
                     <p class="footer-description">Ihr Premium-Partner für professionelle Gebäudereinigung in Kassel. Makellose Sauberkeit für Unternehmen, die Wert auf Qualität legen.</p>
                 </div>
 
@@ -1458,8 +1745,8 @@
                     <ul class="footer-links">
                         <li><a href="#about">Über Uns</a></li>
                         <li><a href="#gallery">Referenzen</a></li>
+                        <li><a href="#social">Social Media</a></li>
                         <li><a href="#contact">Kontakt</a></li>
-                        <li><a href="#contact">Anfahrt</a></li>
                         <li><a href="#contact">Karriere</a></li>
                     </ul>
                 </div>
@@ -1476,7 +1763,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Blitzblank Kassel | Professionelle Gebäudereinigung GmbH | Alle Rechte vorbehalten</p>
+                <p>&copy; 2025 KristallRein Kassel | Professionelle Gebäudereinigung | Alle Rechte vorbehalten</p>
             </div>
         </div>
     </footer>
@@ -1577,13 +1864,32 @@
             }, observerOptions);
 
             // Beobachte alle Service-Cards und andere Elemente
-            document.querySelectorAll('.service-card, .about-content, .gallery-item, .contact-method').forEach(el => {
+            document.querySelectorAll('.service-card, .about-content, .gallery-comparison, .contact-method, .platform-card').forEach(el => {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(30px)';
                 el.style.transition = 'all 0.6s ease-out';
                 observer.observe(el);
             });
+
+            // Formular-Handling
+            const offerForm = document.getElementById('offer-form');
+            if (offerForm) {
+                offerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Hier würde normalerweise die Formular-Daten an einen Server gesendet werden
+                    // Für dieses Beispiel zeigen wir nur eine Alert-Box
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    
+                    alert(`Vielen Dank ${name}! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden unter ${email}.`);
+                    
+                    // Formular zurücksetzen
+                    offerForm.reset();
+                });
+            }
         });
     </script>
 </body>
-</html>
+</html></html>
